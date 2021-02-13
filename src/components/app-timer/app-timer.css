@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.container {
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.work {
+  background-color: #eb445a;
+}
+
+.rest {
+  background-color: #3880ff;
+}
+
+.done {
+  background-color: #28ba62;
+}
+
+.sets {
+  margin: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.state {
+  margin: 8px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.time {
+  margin: 8px;
+  font-size: 32px;
+  font-weight: bold;
+}

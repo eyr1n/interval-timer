@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+svg {
+  width: 100%;
+  transform: rotate(-90deg);
+}
+
+#workArc {
+  fill: transparent;
+  stroke: #eb445a;
+  stroke-width: 8;
+  stroke-dasharray: 0 1000;
+}
+
+#restArc {
+  fill: transparent;
+  stroke: #92949c;
+  stroke-width: 8;
+}
+
+#progressArc {
+  fill: transparent;
+  stroke: var(--app-progress-arc-color);
+  stroke-width: 10;
+  stroke-dasharray: 0 1000;
+}
