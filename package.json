@@ -1,7 +1,13 @@
 {
-  "name": "me.rinrin.interval_timer",
+  "name": "interval-timer",
   "displayName": "Interval Timer",
+  "private": true,
   "version": "1.0.0",
+  "description": "interval-timer",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
