@@ -22,7 +22,7 @@ export class ConvertTime {
     return sets;
   }
 
-  private zeroFill(input: number): string {
+  zeroFill(input: number): string {
     return input.toString().padStart(2, '0');
   }
 }

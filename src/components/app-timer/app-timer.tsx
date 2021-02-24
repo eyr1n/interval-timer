@@ -10,17 +10,17 @@ import { ConvertTime } from '../../helpers/ConvertTime';
 export class AppTimer {
   @Prop() isPaused;
 
-  private cT: ConvertTime;
-  private timerId: number;
+  #cT: ConvertTime;
+  #timerId: number;
 
-  private states = {
+  #states = {
     work: 'Work',
     rest: 'Rest',
     done: 'Finished!',
   };
 
   constructor() {
-    this.cT = new ConvertTime();
+    this.#cT = new ConvertTime();
   }
 
   timerStart() {
@@ -67,13 +67,13 @@ export class AppTimer {
       }
 
       if (state.currentState == 'done') {
-        cancelAnimationFrame(this.timerId);
+        cancelAnimationFrame(this.#timerId);
       } else {
-        this.timerId = requestAnimationFrame(timer);
+        this.#timerId = requestAnimationFrame(timer);
       }
     };
 
-    this.timerId = requestAnimationFrame(timer);
+    this.#timerId = requestAnimationFrame(timer);
   }
 
   getSetsProgress() {
@@ -91,7 +91,7 @@ export class AppTimer {
   disconnectedCallback() {
     state.currentState = 'idle';
     state.remainingTime = 0;
-    cancelAnimationFrame(this.timerId);
+    cancelAnimationFrame(this.#timerId);
   }
 
   render() {
@@ -99,8 +99,8 @@ export class AppTimer {
       <Host>
         <div class={`container ${state.currentState}`}>
           <div class="sets">{this.getSetsProgress()}</div>
-          <div class="state">{this.states[state.currentState]}</div>
-          <div class="time">{this.cT.secondsToTime(state.remainingTime)}</div>
+          <div class="state">{this.#states[state.currentState]}</div>
+          <div class="time">{this.#cT.secondsToTime(state.remainingTime)}</div>
         </div>
       </Host>
     );
